@@ -1,0 +1,22 @@
+JPA Cascade Types
+
+The cascade types supported by the Java Persistence Architecture are as below:
+
+CascadeType.PERSIST : means that save() or persist() operations cascade to related entities.
+CascadeType.MERGE : means that related entities are merged when the owning entity is merged.
+CascadeType.REFRESH : does the same thing for the refresh() operation.
+CascadeType.REMOVE : removes all related entities association with this setting when the owning entity is deleted.
+CascadeType.DETACH : detaches all related entities if a “manual detach” 
+occurs.
+
+CascadeType.ALL : is shorthand for all of the above cascade operations.
+The cascade configuration option accepts an array of CascadeTypes; thus, to include only refreshes and merges in the cascade operation for a One-to-Many relationship as in our example, you might see the following:
+
+
+all-delete-orphan
+what is orphan record ..?
+an orphan record means it is a record in child table but it doesn’t have association with its parent in the application.
+[ And ]
+In an application, if a child record is removed from the collection and if we want to remove that child record immediately from the database, then we need to set the cascade =”all-delete-orphan”
+And that’s it about this cascade attribute in hibernate, hope i explained all the values..!!
+  
